@@ -1,0 +1,46 @@
+.body {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.body .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.body .buttons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 100px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px #c8c8c8;
+          box-shadow: 0 0 10px #c8c8c8;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.body .buttons a:hover {
+  -webkit-box-shadow: 0 0 20px 5px #c8c8c8;
+          box-shadow: 0 0 20px 5px #c8c8c8;
+}
+/*# sourceMappingURL=style.css.map */

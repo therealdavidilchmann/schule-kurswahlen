@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/templates.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/auth/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a class="a-button nav-item" href="../">Lichtenbergschule</a>
+        </div>
+        <div class="right">
+            <a class="a-button nav-item" href="./logout.html" id="logout-btn">Logout</a>
+            <a class="a-button nav-item" href="./login.html" id="login-btn">Login</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form class="login-form" id="login-form" method="post">
+            <label for="username">Benutzername</label>
+            <input type="text" name="username" id="username" class="input"><br>
+            <label for="password">Passwort</label>
+            <input type="text" name="password" id="password" class="input"><br>
+            <input type="submit" value="Anmelden" class="submit-btn">
+        </form>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/form-handler/login-handler.js"></script>
+
+    
+    
+</body>
+</html>

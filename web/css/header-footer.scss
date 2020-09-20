@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 100px;
+    box-shadow: 0 0 20px 10px rgba(200, 200, 200, 1);
+}
+
+.nav-item {
+    font-size: 30px;
+    margin: 20px;
+}
