@@ -5,3 +5,5 @@
     - Eine Webseite
     - Plattformunabhängige Desktopapp
     - Mobile Apps mit iOS und Android unterstützung
+
+Collaborators: David Ilchmann, Philip Koschnitzki
