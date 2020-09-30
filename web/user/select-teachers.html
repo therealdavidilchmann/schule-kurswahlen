@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/select-teachers.css">
+    <link rel="stylesheet" href="../css/templates.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a class="a-button nav-item" href="../">Lichtenbergschule</a>
+        </div>
+        <div class="right">
+            <a class="a-button nav-item" href="../auth/logout.html" id="logout-btn">Logout</a>
+            <a class="a-button nav-item" href="../auth/login.html" id="login-btn">Login</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="class-name-header">
+            <p class="course-name">Mathe</p>
+            <a href="" class="submit-btn" id="submit-btn">Weiter</a>
+        </div> 
+        <hr>
+        <div class="targets">
+            <div class="target" id="1">
+                <p class="wahl-label">1</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="2">
+                <p class="wahl-label">2</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="3">
+                <p class="wahl-label">3</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="4">
+                <p class="wahl-label">4</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="5">
+                <p class="wahl-label">5</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="6">
+                <p class="wahl-label">6</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="7">
+                <p class="wahl-label">7</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="target" id="8">
+                <p class="wahl-label">8</p>
+                <div class="aim" id="aim-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+
+        <div class="teachers" id="teachers">
+            <div class="teacher" id="teacher1" draggable="true" ondragstart="drag(event)">
+                <p>Jost</p>
+            </div>
+            <div class="teacher" id="teacher2" draggable="true" ondragstart="drag(event)">
+                <p>Chugg</p>
+            </div>
+            <div class="teacher" id="teacher3" draggable="true" ondragstart="drag(event)">
+                <p>3</p>
+            </div>
+            <div class="teacher" id="teacher4" draggable="true" ondragstart="drag(event)">
+                <p>4</p>
+            </div>
+            <div class="teacher" id="teacher5" draggable="true" ondragstart="drag(event)">
+                <p>5</p>
+            </div>
+            <div class="teacher" id="teacher6" draggable="true" ondragstart="drag(event)">
+                <p>6</p>
+            </div>
+            <div class="teacher" id="teacher7" draggable="true" ondragstart="drag(event)">
+                <p>7</p>
+            </div>
+            <div class="teacher" id="teacher8" draggable="true" ondragstart="drag(event)">
+                <p>8</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/select-teachers.js"></script>
+</body>
+</html>

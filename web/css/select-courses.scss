@@ -1,0 +1,119 @@
+.content {
+    margin: 50px;
+}
+
+.class-name-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-name {
+    font-size: 60px;
+    font-weight: 200;
+    margin-left: 10%;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.info-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    font-size: 23px;
+    margin-right: 10px;
+    background-color: green;
+}
+
+.info-btn:hover {
+    background-color: rgba(0, 140, 0, 1);
+    box-shadow: 0 0 10px rgba(130, 130, 130, 1);
+}
+
+.submit-btn {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    margin-right: 10%;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    font-size: 23px;
+    color: white;
+    background-color: blue;
+}
+
+.submit-btn:hover {
+    background-color: rgba(0, 0, 230, 1);
+    box-shadow: 0 0 10px rgba(130, 130, 130, 1);
+}
+
+#all-courses-table {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+th {
+    padding: 0 50px 20px 50px;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    padding: 0 50px 10px 50px;
+}
+
+.help-popup {
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
+    left: calc(50% - 250px);
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 30px 20px rgba(200, 200, 200, 1);
+}
+
+.help-exit-btn {
+    cursor: pointer;
+    float: right;
+    outline: none;
+    border: none;
+    background-color: white;
+    margin-right: 5px;
+    font-size: 23px;
+}
+
+.help-content {
+    margin: 30px;
+}
+
+.help-anleitung {
+    font-size: 30px;
+}
+
+.help-fachbereich {
+    margin-top: 20px;
+}
+
+.help-fachbereich-body {
+    margin-left: 20px;
+}

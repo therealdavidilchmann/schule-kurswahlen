@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/templates.css">
+    <link rel="stylesheet" href="../css/select-courses.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a class="a-button nav-item" href="../">Lichtenbergschule</a>
+        </div>
+        <div class="right">
+            <a class="a-button nav-item" href="./auth/logout.html" id="logout-btn">Logout</a>
+            <a class="a-button nav-item" href="./auth/login.html" id="login-btn">Login</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="class-name-header">
+            <p class="course-name">Kurswahl</p>
+            <div class="right">
+                <input type="button" class="info-btn" value="Hilfe?" onclick="toggleHelpPopup()">
+                <input type="button" class="submit-btn" value="Weiter" id="submit-btn">
+            </div>
+        </div> 
+        <hr><br>
+        <table id="all-courses-table">
+            <tr>
+                <th>Fachbereich 1</th>
+                <th>Fachbereich 2</th>
+                <th>Fachbereich 3</th>
+                <th>Sport</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="deutsch" checked> Deutsch</td>
+                <td><input type="checkbox" id="powi"> PoWi</td>
+                <td><input type="checkbox" id="mathe" checked> Mathe</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="englisch"> Englisch</td>
+                <td><input type="checkbox" id="geschichte"> Geschichte</td>
+                <td><input type="checkbox" id="physik"> Physik</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="spanisch"> Spanisch</td>
+                <td><input type="checkbox" id="ethik"> Ethik</td>
+                <td><input type="checkbox" id="chemie"> Chemie</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="franzoesisch"> Französisch</td>
+                <td><input type="checkbox" id="religion-ev"> Religion (Ev)</td>
+                <td><input type="checkbox" id="biologie"> Biologie</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="kunst"> Kunst</td>
+                <td><input type="checkbox" id="religion-kath"> Religion (Kath)</td>
+                <td><input type="checkbox" id="informatik"> Informatik</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="musik"> Musik</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="darstellendes-spiel"> Darstellendes Spiel</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="help-popup" id="help-popup">
+        <button class="help-exit-btn" onclick="toggleHelpPopup()">&#10005;</button>
+        <div class="help-content">
+            <p class="help-anleitung">Anleitung</p>
+            <div class="help-fachbereich">
+                <p class="help-fachbereich-titel">Fachbereich 1:</p>
+                <p class="help-fachbereich-body">Deutsch<br>1 Fremdsprache<br>1 künstlerisch-ästhetisches Fach (Musik, Kunst oder D.Sp.)</p>
+            </div>
+            <div class="help-fachbereich">
+                <p class="help-fachbereich-titel">Fachbereich 2:</p>
+                <p class="help-fachbereich-body">PoWi<br>Geschichte<br>1 Philosophisches Fach (Religion oder Ethik)</p>
+            </div>
+            <div class="help-fachbereich">
+                <p class="help-fachbereich-titel">Fachbereich 3:</p>
+                <p class="help-fachbereich-body">Mathe<br>1 Naturwissenschaft oder Informatik</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/select-courses.js"></script>
+</body>
+</html>
