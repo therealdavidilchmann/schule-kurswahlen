@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/view-courses.css">
     <link rel="stylesheet" href="../css/templates.css">
@@ -36,52 +37,82 @@
                 </tr>
                 <tr>
                     <td>Mathe</td>
-                    <td><input type="button" value="Jost" onclick="copyToClipboard('andrea.jost@luo-darmstadt.eu')"></td>
+                    <td>
+                        <input type="text" style="display: none;" value="andrea.jost@luo-darmstadt.eu" id="email-jo">
+                        <input type="button" class="email-copy-btn" value="Jost" id="email-jo">
+                    </td>
                     <td>JO</td>
                 </tr>
                 <tr>
                     <td>Informatik</td>
-                    <td><a href="mailto:katrin.schuetzkowski@luo-darmstadt.eu">Schützkowski</a></td>
+                    <td>
+                        <input type="text" style="display: none;" value="katrin.schuetzkowski@luo-darmstadt.eu" id="email-sk">
+                        <input type="button" class="email-copy-btn" value="Schützkowski" id="email-sk">
+                    </td>
                     <td>SK</td>
                 </tr>
                 <tr>
                     <td>Deutsch</td>
-                    <td>Niederhoffer</td>
+                    <td>
+                        <input type="text" style="display: none;" value="wilma.niederhofer@luo-darmstadt.eu" id="email-ni">
+                        <input type="button" class="email-copy-btn" value="Niederhoffer" id="email-ni">
+                    </td>
                     <td>NI</td>
                 </tr>
                 <tr>
                     <td>Chemie</td>
-                    <td>Höpker</td>
+                    <td>
+                        <input type="text" style="display: none;" value="veit.hoepker@luo-darmstadt.eu" id="email-hoe">
+                        <input type="button" class="email-copy-btn" value="Höpker" id="email-hoe">
+                    </td>
                     <td>HOE</td>
                 </tr>
                 <tr>
                     <td>Musik</td>
-                    <td>Hahn</td>
+                    <td>
+                        <input type="text" style="display: none;" value="claudia.hahn@luo-darmstadt.eu" id="email-hn">
+                        <input type="button" class="email-copy-btn" value="Hahn" id="email-hn">
+                    </td>
                     <td>HN</td>
                 </tr>
                 <tr>
                     <td>Sport</td>
-                    <td>Faßmann</td>
+                    <td>
+                        <input type="text" style="display: none;" value="eric.fassmann@luo-darmstadt.eu" id="email-fn">
+                        <input type="button" class="email-copy-btn" value="Faßmann" id="email-fn">
+                    </td>
                     <td>FN</td>
                 </tr>
                 <tr>
                     <td>Geschichte</td>
-                    <td>Flad</td>
+                    <td>
+                        <input type="text" style="display: none;" value="alexander.flad@luo-darmstadt.eu" id="email-fd">
+                        <input type="button" class="email-copy-btn" value="Flad" id="email-fd">
+                    </td>
                     <td>FD</td>
                 </tr>
                 <tr>
                     <td>Religion</td>
-                    <td>Kreiser</td>
+                    <td>
+                        <input type="text" style="display: none;" value="katja.kreiser@luo-darmstadt.eu" id="email-kre">
+                        <input type="button" class="email-copy-btn" value="Kreiser" id="email-kre">
+                    </td>
                     <td>KRE</td>
                 </tr>
                 <tr>
                     <td>Physik</td>
-                    <td>Chugg</td>
+                    <td>
+                        <input type="text" style="display: none;" value="kevin.chugg@luo-darmstadt.eu" id="email-chg">
+                        <input type="button" class="email-copy-btn" value="Chugg" id="email-chg">
+                    </td>
                     <td>CHG</td>
                 </tr>
                 <tr>
                     <td>PoWi</td>
-                    <td>Otto</td>
+                    <td>
+                        <input type="text" style="display: none;" value="ulrike.otto@luo-darmstadt.eu" id="email-ot">
+                        <input type="button" class="email-copy-btn" value="Otto" id="email-ot">
+                    </td>
                     <td>OT</td>
                 </tr>
             </table>

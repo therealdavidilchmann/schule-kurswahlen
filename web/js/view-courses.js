@@ -16,8 +16,19 @@ const switchView = () => {
     }
 }
 
-const copyToClipboard = (copyText) => {
-    copyText.select();
-    copyText.setSelectionRange(0, 99999)
-    document.execCommand("copy");
-}
+document.querySelectorAll(".email-copy-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        try {
+            var txt = document.getElementById(btn.id).value;
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val(txt).select();
+            var retVal = document.execCommand("copy");
+            if (retVal) alert("Erfolgreich die E-Mail kopiert.");
+            else alert("Fehler beim kopieren der E-Mail.")
+            $temp.remove();
+        } catch (err) {
+            alert('Error while copying to clipboard: ' + err);
+        }
+    });
+})

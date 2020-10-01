@@ -51,17 +51,25 @@
 }
 
 th {
-    padding: 10px 100px 10px 100px;
+    padding: 10px 50px 10px 50px;
     text-align: center;
     font-size: 25px;
 }
 
 td {
-    padding: 5px 100px 5px 100px;
+    padding: 5px 75px 5px 75px;
     margin-bottom: 10px;
     text-align: center;
 }
 
 .woche-label {
     font-size: 40px;
+}
+
+.email-copy-btn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
 }
