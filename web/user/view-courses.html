@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/view-courses.css">
+    <link rel="stylesheet" href="../css/templates.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a class="a-button nav-item" href="../">Lichtenbergschule</a>
+        </div>
+        <div class="right">
+            <a class="a-button nav-item" href="../auth/logout.html" id="logout-btn">Logout</a>
+            <a class="a-button nav-item" href="../auth/login.html" id="login-btn">Login</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="switch">
+            <div class="container-switch left-active" id="container-switch">
+                <input type="button" value="Stundenplan" class="switch-btn" onclick="switchView()">
+                <input type="button" value="Kursliste" class="switch-btn" onclick="switchView()">
+            </div>
+        </div>
+        <div id="list-view">
+            <table id="courses-table">
+                <tr>
+                    <th>Kurs</th>
+                    <th>Lehrer/in</th>
+                    <th>Kürzel</th>
+                </tr>
+                <tr>
+                    <td>Mathe</td>
+                    <td><input type="button" value="Jost" onclick="copyToClipboard('andrea.jost@luo-darmstadt.eu')"></td>
+                    <td>JO</td>
+                </tr>
+                <tr>
+                    <td>Informatik</td>
+                    <td><a href="mailto:katrin.schuetzkowski@luo-darmstadt.eu">Schützkowski</a></td>
+                    <td>SK</td>
+                </tr>
+                <tr>
+                    <td>Deutsch</td>
+                    <td>Niederhoffer</td>
+                    <td>NI</td>
+                </tr>
+                <tr>
+                    <td>Chemie</td>
+                    <td>Höpker</td>
+                    <td>HOE</td>
+                </tr>
+                <tr>
+                    <td>Musik</td>
+                    <td>Hahn</td>
+                    <td>HN</td>
+                </tr>
+                <tr>
+                    <td>Sport</td>
+                    <td>Faßmann</td>
+                    <td>FN</td>
+                </tr>
+                <tr>
+                    <td>Geschichte</td>
+                    <td>Flad</td>
+                    <td>FD</td>
+                </tr>
+                <tr>
+                    <td>Religion</td>
+                    <td>Kreiser</td>
+                    <td>KRE</td>
+                </tr>
+                <tr>
+                    <td>Physik</td>
+                    <td>Chugg</td>
+                    <td>CHG</td>
+                </tr>
+                <tr>
+                    <td>PoWi</td>
+                    <td>Otto</td>
+                    <td>OT</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="timetable-view">
+            <p class="woche-label">A-Woche</p>
+            <div class="timetable-woche">
+                <table id="timetable-table">
+                    <tr>
+                        <th></th>
+                        <th>Montag</th>
+                        <th>Dienstag</th>
+                        <th>Mittwoch</th>
+                        <th>Donnerstag</th>
+                        <th>Freitag</th>
+                    </tr>
+                    <tr>
+                        <td>7:55 - 9:25</td>
+                        <td>Informatik<br>(611)</td>
+                        <td>Religion<br>(333)</td>
+                        <td>Physik<br>(431)</td>
+                        <td>Deutsch<br>(334)</td>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>9:45 - 11:15</td>
+                        <td>Chemie<br>(405)</td>
+                        <td>Mathe<br>(421)</td>
+                        <td>Deutsch<br>(334)</td>
+                        <td>Englisch<br>(336)</td>
+                        <td>Mathe<br>(421)</td>
+                    </tr>
+                    <tr>
+                        <td>11:35 - 13:05</td>
+                        <td>Musik<br>(103)</td>
+                        <td>Informatik<br>(612)</td>
+                        <td><br></td>
+                        <td>Geschichte<br>(312)</td>
+                        <td>PoWi<br>(312)</td>
+                    </tr>
+                    <tr>
+                        <td>13:05 - 14:00</td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Sport<br>(Th3)</td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td>Physik<br>(431)</td>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>15:45 - 17:15</td>
+                        <td>Geschichte<br>(312)</td>
+                        <td><br></td>
+                        <td>PoWi<br>(312)</td>
+                        <td>Chemie<br>(405)</td>
+                        <td><br></td>
+                    </tr>
+                </table>
+            </div>
+            <p class="woche-label">B-Woche</p>
+            <div class="timetable-woche">
+                <table id="timetable-table">
+                    <tr>
+                        <th></th>
+                        <th>Montag</th>
+                        <th>Dienstag</th>
+                        <th>Mittwoch</th>
+                        <th>Donnerstag</th>
+                        <th>Freitag</th>
+                    </tr>
+                    <tr>
+                        <td>7:55 - 9:25</td>
+                        <td>Informatik<br>(611)</td>
+                        <td>Religion<br>(333)</td>
+                        <td>Physik<br>(431)</td>
+                        <td>Deutsch<br>(334)</td>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>9:45 - 11:15</td>
+                        <td>Chemie<br>(405)</td>
+                        <td>Mathe<br>(421)</td>
+                        <td>Deutsch<br>(334)</td>
+                        <td>Englisch<br>(336)</td>
+                        <td>Mathe<br>(421)</td>
+                    </tr>
+                    <tr>
+                        <td>11:35 - 13:05</td>
+                        <td>Musik<br>(103)</td>
+                        <td>Informatik<br>(612)</td>
+                        <td><br></td>
+                        <td>Geschichte<br>(312)</td>
+                        <td>PoWi<br>(312)</td>
+                    </tr>
+                    <tr>
+                        <td>13:05 - 14:00</td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:30</td>
+                        <td>Sport<br>(Th3)</td>
+                        <td><br></td>
+                        <td><br></td>
+                        <td>Physik<br>(431)</td>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>15:45 - 17:15</td>
+                        <td>Geschichte<br>(312)</td>
+                        <td><br></td>
+                        <td>PoWi<br>(312)</td>
+                        <td>Chemie<br>(405)</td>
+                        <td><br></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/view-courses.js"></script>
+</body>
+</html>

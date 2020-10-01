@@ -1,0 +1,86 @@
+.content {
+  margin: 50px;
+}
+
+.switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 70px 50px 100px 50px;
+}
+
+.container-switch {
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 30px #b4b4b4;
+          box-shadow: 0 0 30px #b4b4b4;
+}
+
+.left-active {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(50, 50, 180, 0.75)), color-stop(70%, white));
+  background: linear-gradient(90deg, rgba(50, 50, 180, 0.75) 0%, white 70%);
+}
+
+.right-active {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(50, 50, 180, 0.75)), color-stop(70%, white));
+  background: linear-gradient(270deg, rgba(50, 50, 180, 0.75) 0%, white 70%);
+}
+
+.switch-btn {
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding: 20px 30px 20px 30px;
+  background-color: transparent;
+  font-size: 20px;
+  width: 200px;
+}
+
+.timetable-woche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+#list-view {
+  display: none;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#courses-table tr:nth-child(even), #timetable-table tr:nth-child(even) {
+  background-color: #c8c8c8;
+}
+
+th {
+  padding: 10px 100px 10px 100px;
+  text-align: center;
+  font-size: 25px;
+}
+
+td {
+  padding: 5px 100px 5px 100px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.woche-label {
+  font-size: 40px;
+}
+/*# sourceMappingURL=view-courses.css.map */
