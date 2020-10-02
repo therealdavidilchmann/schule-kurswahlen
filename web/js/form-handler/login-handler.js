@@ -8,7 +8,7 @@ const handleForm = (e) => {
     const username = usernameTF.value;
     const password = passwordTF.value;
 
-    window.location.href = "http://127.0.0.1:5500/index.html?loggedIn=1";
+    window.location.href = "../index.html?loggedIn=1";
 }
 
 loginForm.addEventListener('submit', handleForm);
