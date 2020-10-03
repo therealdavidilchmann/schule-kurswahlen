@@ -19,7 +19,7 @@ public class DataPreprocessing {
     HashMap<Long, HashMap<Integer, LinkedList<String>>> courseChoices = new HashMap<>();
 
     public static void main(String[] args) {
-        new DataPreprocessing().readObjects();
+
     }
 
     private void readObjects() {
