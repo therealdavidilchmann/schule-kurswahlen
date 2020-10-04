@@ -10,6 +10,7 @@ public class Main {
 
     private Main() {
         database = new JDBC();
+        dataPreprocessing = new DataPreprocessing();
     }
 
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Main {
     }
 
     private void initializeDatabase() {
-        database.createStatement("CREATE TABLE ");
+        dataPreprocessing.readObjects();
     }
 
 }

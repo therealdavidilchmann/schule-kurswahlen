@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class Student {
 
-    HashMap<Integer, LinkedList<Integer>> courseChoices = new HashMap<>();
+    private final HashMap<Integer, LinkedList<Long>> courseChoices = new HashMap<>();
 
     public Student() {
         for (int i = 0; i < new DataPreprocessing().courseNames.length; i++) {
@@ -13,14 +13,17 @@ public class Student {
         }
     }
 
-    public void addChoice(int i, int courseID) {
-        LinkedList<Integer> linkedList = courseChoices.get(i);
+    public void addChoice(int index, Long courseID) {
+        LinkedList<Long> linkedList = courseChoices.get(index);
         if (linkedList == null) {
             linkedList = new LinkedList<>();
         }
         linkedList.add(courseID);
-        courseChoices.put(i, linkedList);
+        courseChoices.put(index, linkedList);
         System.out.println(courseChoices.toString());
     }
 
+    public LinkedList<Long> getSelectionList(int index) {
+        return courseChoices.get(index);
+    }
 }

@@ -16,18 +16,21 @@ public class DataPreprocessing {
     public String[] courseNames = {"German_Choices", "English_Choices", "Spanish_Choices", "French_Choices", "Art_Choices", "Music_Choices", "DSP_Choices", "PoWi_Choices", "History_Choices", "Ethics_Choices", "Religion_ev_Choices", "Religion_kath_Choices", "Math_Choices", "Physics_Choices", "Chemistry_Choices", "Biology_Choices", "Computer_Science_Choices"};
     private final List<Student> studentList = new LinkedList<>();
 
-    private void readObjects() {
+    public void readObjects() {
         try {
             boolean atEnd = false;
             JSONObject jsonObject = (JSONObject) jsonParser.parse((new FileReader("Backend/src/JSON/sample.json")));
             int loopCount = 0;
+            JSONArray jsonArray;
             while (!atEnd) {
                 studentList.add(new Student());
+                int courseCount = 0;
                 for (String courseName : courseNames) {
-                    JSONArray jsonArray = (JSONArray) jsonObject.get(courseName);
+                    jsonArray = (JSONArray) jsonObject.get(courseName);
                     for (Object obj : jsonArray) {
-                        studentList.get(loopCount).addChoice(loopCount, (Integer) obj);
+                        studentList.get(loopCount).addChoice(courseCount, (Long) obj);
                     }
+                    courseCount++;
                 }
                 if ((boolean) jsonObject.get("END")) {
                     atEnd = true;
