@@ -18,12 +18,12 @@ public class Main {
 
     private void start() {
         database.connect();
-
+        initializeDatabase();
         database.closeConnection();
     }
 
     private void initializeDatabase() {
-        database.createStatement("");
+        database.createStatement("CREATE TABLE ");
     }
 
 }

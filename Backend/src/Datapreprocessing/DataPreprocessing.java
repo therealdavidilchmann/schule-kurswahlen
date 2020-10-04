@@ -14,16 +14,18 @@ import java.util.List;
 public class DataPreprocessing {
 
     private final JSONParser jsonParser = new JSONParser();
-    List<Long> idList = new LinkedList<>();
-    HashMap<Integer, LinkedList<String>> hashes = new HashMap<>();
-    HashMap<Long, HashMap<Integer, LinkedList<String>>> courseChoices = new HashMap<>();
+    private List<Long> idList = new LinkedList<>();
+    private HashMap<Integer, LinkedList<String>> hashes = new HashMap<>();
+    private HashMap<Long, HashMap<Integer, LinkedList<String>>> courseChoices = new HashMap<>();
+    public String[] courseNames = {"German_Choices", "English_Choices", "Spanish_Choices", "French_Choices", "Art_Choices", "Music_Choices", "DSP_Choices", "PoWi_Choices", "History_Choices", "Ethics_Choices", "Religion_ev_Choices", "Religion_kath_Choices", "Math_Choices", "Physics_Choices", "Chemistry_Choices", "Biology_Choices", "Computer_Science_Choices"};
 
     public static void main(String[] args) {
 
     }
 
-    private void readObjects() {
+    /*private void readObjects() {
         try {
+//            Variable to check if JSON file is at the end
             boolean atEnd = false;
             int loopCount = 0;
             JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("Backend/src/JSON/sample.json"));
@@ -53,9 +55,10 @@ public class DataPreprocessing {
         } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    private void writeToDatabase() {
+    private void readObjects() {
+
     }
 
 }

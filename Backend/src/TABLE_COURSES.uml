@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_COURSES</OriginalElement>
+  <nodes>
+    <node x="0.0" y="292.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_student-course_allocation</node>
+    <node x="68.0" y="441.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_STUDENTS</node>
+    <node x="325.0" y="292.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_course-teacher_allocation</node>
+    <node x="397.0" y="441.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_TEACHER</node>
+    <node x="76.0" y="148.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_SELECTION</node>
+    <node x="514.0" y="149.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_COURSES</node>
+    <node x="2.0" y="-5.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_student-selection_allocation</node>
+    <node x="373.75" y="0.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_course-room_allocation</node>
+    <node x="349.0" y="149.0">81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_ROOMS</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_ROOMS" target="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_course-room_allocation">
+      <point x="0.0" y="-38.5" />
+      <point x="421.5" y="124.0" />
+      <point x="437.75" y="124.0" />
+      <point x="-64.0" y="49.5" />
+    </edge>
+    <edge source="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_TEACHER" target="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_course-teacher_allocation">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_SELECTION" target="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_student-selection_allocation">
+      <point x="0.0" y="-49.5" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_STUDENTS" target="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_student-course_allocation">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.TABLE_COURSES" target="81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_course-room_allocation">
+      <point x="0.0" y="-38.5" />
+      <point x="582.0" y="124.0" />
+      <point x="565.75" y="124.0" />
+      <point x="64.0" y="49.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="325.0" y="256.5" />
+  <SelectedNodes>
+    <node>81da4702-0044-4e22-95d1-05b26cbd4117.TABLE:MAINDB.PUBLIC.table_student-selection_allocation</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
