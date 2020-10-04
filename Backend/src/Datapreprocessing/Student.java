@@ -13,4 +13,14 @@ public class Student {
         }
     }
 
+    public void addChoice(int i, int courseID) {
+        LinkedList<Integer> linkedList = courseChoices.get(i);
+        if (linkedList == null) {
+            linkedList = new LinkedList<>();
+        }
+        linkedList.add(courseID);
+        courseChoices.put(i, linkedList);
+        System.out.println(courseChoices.toString());
+    }
+
 }
