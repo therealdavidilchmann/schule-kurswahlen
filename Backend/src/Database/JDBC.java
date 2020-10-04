@@ -65,11 +65,13 @@ public class JDBC {
     }
 
     public void closeConnection() {
-        System.out.println("Closing connection...");
+        System.out.print("Closing connection...");
         try {
             connection.close();
+            System.out.print("OK!" + "\n");
         } catch (SQLException e) {
             System.out.println("Error: Not able to close connection.");
+            e.printStackTrace();
         }
     }
 }

@@ -8,6 +8,10 @@ public class Main {
     private JDBC database;
     private DataPreprocessing dataPreprocessing;
 
+    private Main() {
+        database = new JDBC();
+    }
+
     public static void main(String[] args) {
         new Main().start();
     }

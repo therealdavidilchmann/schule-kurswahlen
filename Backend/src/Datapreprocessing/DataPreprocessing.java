@@ -26,7 +26,7 @@ public class DataPreprocessing {
         try {
             boolean atEnd = false;
             int loopCount = 0;
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("Backend/src/Datapreprocessing/sample.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("Backend/src/JSON/sample.json"));
             while (!atEnd) {
                 int courseCount = 0;
                 LinkedList<String> tempList = new LinkedList<>();
