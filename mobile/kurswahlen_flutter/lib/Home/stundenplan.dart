@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:kurswahlenflutter/HelperClasses/day.dart';
+import './rowItem.dart';
 
 class Stundenplan extends StatelessWidget {
-  Widget getStundenplan() {
-    return Column(children: <Widget>[getDays()[0], getDays()[1], getDays()[2]]);
-  }
-
-  Map<int, Widget> getDays() {
-    return [
-      Text("A"),
-      Text("B"),
-      Text("C"),
-    ].asMap();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: getStundenplan(),
+      child: getStundenplan(context),
       padding: EdgeInsets.all(10),
       alignment: Alignment.center,
     );
   }
+}
+
+Widget getStundenplan(BuildContext context) {
+  return Column(
+    children: getDays().map((day) => RowItem(day)).toList(),
+  );
+}
+
+List<Day> getDays() {
+  return [
+    Day("Montag", ["Mathe", "Info"]),
+    Day("Dienstag", ["Deutsch", "Englisch"]),
+    Day("Mittwoch", ["Chemie", "Physik"]),
+  ];
 }
