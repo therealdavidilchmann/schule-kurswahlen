@@ -1,8 +1,10 @@
+import 'package:kurswahlenflutter/HelperClasses/subject.dart';
+
 class Day {
   String _name;
-  List<String> _classes;
+  List<Subject> _classes;
 
-  Day(String name, List<String> classes) {
+  Day(String name, List<Subject> classes) {
     this._classes = classes;
     this._name = name;
   }
@@ -11,7 +13,7 @@ class Day {
     return this._name;
   }
 
-  List<String> getClasses() {
+  List<Subject> getClasses() {
     return this._classes;
   }
 }

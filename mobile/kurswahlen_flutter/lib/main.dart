@@ -25,10 +25,13 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("B :)"),
-          ),
-          body: homeView()),
+        appBar: AppBar(
+          title: Text("Stundenplan"),
+        ),
+        body: SingleChildScrollView(
+          child: homeView()
+        )
+      ),
     );
   }
 }
