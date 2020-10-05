@@ -3,35 +3,32 @@ import 'package:kurswahlenflutter/Auth/login.dart';
 import 'package:kurswahlenflutter/Home/stundenplan.dart';
 import 'package:kurswahlenflutter/home.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var isLoggedIn = true;
-
-    Widget homeView() {
-      return (isLoggedIn ? Stundenplan() : Login());
-    }
+    var isLoggedIn = false;
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      initialRoute: (isLoggedIn ? '/' : '/login'),
+      routes: {
+        '/': (context) => viewContainerWrapper(Home()),
+        '/login': (context) => viewContainerWrapper(Login()),
+        '/stundenplan': (context) => viewContainerWrapper(Stundenplan()),
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Stundenplan"),
-        ),
-        body: SingleChildScrollView(
-          child: homeView()
-        )
+        visualDensity: VisualDensity.adaptivePlatformDensity
       ),
     );
   }
+}
+
+Widget viewContainerWrapper(Widget insert) {
+  return SafeArea(
+    child: insert
+  );
 }

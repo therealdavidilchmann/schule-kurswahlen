@@ -27,56 +27,58 @@ class _RowItemState extends State<RowItem> {
   Widget build(BuildContext context) {
     if (!this.isInitialized) {
       this.isShowingClasses =
-          checkIfRowIsCurrentDay(this.widget._day.getName());
+        checkIfRowIsCurrentDay(this.widget._day.getName());
       this.isInitialized = true;
     }
     return Container(
-        margin: EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Material(
-                child: InkWell(
-              onTap: () => toggleClassesExitension(),
-              child: Container(
-                child: Center(
-                  child: Text(
-                    widget._day.getName(),
-                    style: TextStyle(fontSize: 20),
-                  ),
+      margin: EdgeInsets.all(10.0),
+      child: Column(
+        children: [
+          Material(
+            child: InkWell(
+            onTap: () => toggleClassesExitension(),
+            child: Container(
+              child: Center(
+                child: Text(
+                  widget._day.getName(),
+                  style: TextStyle(fontSize: 20),
                 ),
-                width: MediaQuery.of(context).size.width,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(180, 180, 180, 1),
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
               ),
-            )),
-            Visibility(
-              visible: this.isShowingClasses,
-              child: Container(
-                margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black, width: 1),
-                    borderRadius: BorderRadius.circular(10.0)),
-                child: Column(
-                    children: widget._day
-                        .getClasses()
-                        .map(
-                          (c) => Container(
-                            child: rowExtension(c, context),
-                            width: MediaQuery.of(context).size.width,
-                            height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(2.0))),
-                          ),
-                        )
-                        .toList()),
-              ),
-            )
-          ],
-        ));
+              width: MediaQuery.of(context).size.width,
+              height: 50,
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(180, 180, 180, 1),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            ),
+          )
+        ),
+        Visibility(
+          visible: this.isShowingClasses,
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.black, width: 1),
+              borderRadius: BorderRadius.circular(10.0)),
+              child: Column(
+                children: widget._day
+                    .getClasses()
+                    .map(
+                      (c) => Container(
+                        child: rowExtension(c, context),
+                        width: MediaQuery.of(context).size.width,
+                        height: 30,
+                        decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(2.0))),
+                      ),
+                    )
+                    .toList()),
+            ),
+          )
+        ],
+      )
+    );
   }
 }
 
@@ -89,7 +91,7 @@ Widget rowExtension(Subject subject, BuildContext context) {
         Container(
           width: contentWidth / 3,
           child: Text(
-            subject.getRoom(),
+            subject.getZeitraum(),
             textAlign: TextAlign.center,
           ),
         ),
@@ -103,7 +105,7 @@ Widget rowExtension(Subject subject, BuildContext context) {
         Container(
           width: contentWidth / 3,
           child: Text(
-            subject.getTeacher(),
+            subject.getRoom(),
             textAlign: TextAlign.center,
           ),
         )
