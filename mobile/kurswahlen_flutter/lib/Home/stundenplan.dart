@@ -12,7 +12,8 @@ class Stundenplan extends StatefulWidget {
 class _StundenplanState extends State<Stundenplan> {
   String _currentWeek = "";
   bool _isInitialized = false;
-  void setCurrentWeek(String newWeek) {
+
+  set currentWeek(String newWeek) {
     setState(() {
       this._currentWeek = newWeek;
     });
@@ -20,15 +21,13 @@ class _StundenplanState extends State<Stundenplan> {
 
   String getCurrentWeek() {
     int currentWeek = Jiffy().week;
-    if (currentWeek % 2 == 0) {
-      return "A";
-    }
+    if (currentWeek % 2 == 0) return "A";
     return "B";
   }
 
   Widget getStundenplan(BuildContext context) {
     if (!this._isInitialized) {
-      setCurrentWeek(getCurrentWeek());
+      currentWeek = getCurrentWeek();
       this._isInitialized = true;
     }
     List<Day> allDays = (this._currentWeek == "A" ? aWeek : bWeek);
@@ -43,22 +42,26 @@ class _StundenplanState extends State<Stundenplan> {
         appBar: AppBar(
           title: Text('Stundenplan'),
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(children: [
-              Container(
-                child: FlatButton(
-                  child: Text('Wechsel zu ' + (this._currentWeek == "A" ? "B" : "A") + " Woche"),
-                  onPressed: () =>
-                      setCurrentWeek(this._currentWeek == "A" ? "B" : "A"),
+        body: Stack(children: [
+          SingleChildScrollView(
+            child: Container(
+              child: Column(children: [
+                Container(
+                  child: FlatButton(
+                    child: Text('Wechsel zu ' +
+                        (this._currentWeek == "A" ? "B" : "A") +
+                        " Woche"),
+                    onPressed: () => currentWeek =
+                        (this._currentWeek == "A" ? "B" : "A"),
+                  ),
                 ),
-              ),
-              getStundenplan(context),
-            ]),
-            padding: EdgeInsets.all(10),
-            alignment: Alignment.center,
-          ),
-        ));
+                getStundenplan(context),
+              ]),
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+            ),
+          )
+        ]));
   }
 }
 
