@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kurswahlenflutter/Auth/login.dart';
 import 'package:kurswahlenflutter/Home/stundenplan.dart';
+import 'package:kurswahlenflutter/Lehrerliste/lehrerliste.dart';
 import 'package:kurswahlenflutter/home.dart';
 
 void main() => runApp(MyApp());
@@ -18,17 +19,12 @@ class MyApp extends StatelessWidget {
         '/': (context) => viewContainerWrapper(Home()),
         '/login': (context) => viewContainerWrapper(Login()),
         '/stundenplan': (context) => viewContainerWrapper(Stundenplan()),
+        '/lehrerliste': (context) => viewContainerWrapper(Lehrerliste())
       },
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity
-      ),
     );
   }
 }
 
 Widget viewContainerWrapper(Widget insert) {
-  return SafeArea(
-    child: insert
-  );
+  return SafeArea(child: insert);
 }

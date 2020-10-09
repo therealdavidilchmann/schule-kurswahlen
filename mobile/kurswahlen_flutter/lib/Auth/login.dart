@@ -9,14 +9,13 @@ class Login extends StatelessWidget {
           alignment: Alignment.topCenter,
           child: FlatButton(
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, "/", (route) => false);
               },
               child: Text(
                 "Login",
                 style: TextStyle(fontSize: 20),
-              )
-            )
-          ),
+              ))),
     );
   }
 }
