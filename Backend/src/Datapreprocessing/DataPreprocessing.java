@@ -17,26 +17,41 @@ public class DataPreprocessing {
     private final List<Student> studentList = new LinkedList<>();
 
     public void readObjects() {
+        System.out.println("Reading Student Choices...");
         try {
-            JSONObject jsonObject = (JSONObject) jsonParser.parse((new FileReader("Backend/src/JSON/sample.json")));
+//            jsonObject = first object
+            JSONObject jsonObject = (JSONObject) jsonParser.parse((new FileReader("DIF/exchange_to_backend/sample.json")));
+//            amount of times already iterated
             int loopCount = 0;
+//            amount of times to iterate
             int maxLoop = Integer.parseInt((String) jsonObject.get("loop_size"));
-            JSONArray jsonArray;
+//            iterate until json file is finished
             while (loopCount < maxLoop){
+//                student object: 0, 1, 2, n
                 JSONObject student = (JSONObject) jsonObject.get(String.valueOf(loopCount));
+                System.out.print("Creating student " + loopCount + "...");
+//                create new student
                 studentList.add(new Student());
+//                iterates through courseIDs
                 int courseCount = 0;
                 for (String courseName : courseNames) {
-                    jsonArray = (JSONArray) student.get(courseName);
+//                    creates jsonArray for 1, 2, 3, n choice
+                    JSONArray jsonArray = (JSONArray) student.get(courseName);
+//                    Iterates through jsonArray
                     for (Object obj : jsonArray) {
+//                        adds choices to student class
                         studentList.get(loopCount).addChoice(courseCount, (Long) obj);
                     }
+//                    increments courseID
                     courseCount++;
                 }
+                System.out.println("created student");
+//                increments studentID
                 loopCount++;
-                System.out.println(loopCount);
             }
+            System.out.println("Reading Student Choices...OK!");
         } catch (ParseException | IOException e) {
+            System.out.println("Critical Error: Reading Student Choices...FAIL!");
             e.printStackTrace();
         }
     }
