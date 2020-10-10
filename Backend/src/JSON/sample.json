@@ -1,75 +1,143 @@
 {
-  "ID": 0,
-  "German_Choices": [
-    1,
-    2
-  ],
-  "English_Choices": [
-    1,
-    2
-  ],
-  "Spanish_Choices": [
-    2,
-    2
-  ],
-  "French_Choices": [
-    1,
-    2
-  ],
-  "Art_Choices": [
-    1,
-    2
-  ],
-  "Music_Choices": [
-    1,
-    2
-  ],
-  "DSP_Choices": [
-    1,
-    2
-  ],
-  "PoWi_Choices": [
-    1,
-    2
-  ],
-  "History_Choices": [
-    1,
-    2
-  ],
-  "Ethics_Choices": [
-    1,
-    2
-  ],
-  "Religion_ev_Choices": [
-    1,
-    2
-  ],
-  "Religion_kath_Choices": [
-    1,
-    2
-  ],
-  "Math_Choices": [
-    1,
-    2
-  ],
-  "Physics_Choices": [
-    1,
-    2
-  ],
-  "Chemistry_Choices": [
-    1,
-    2
-  ],
-  "Biology_Choices": [
-    1,
-    2
-  ],
-  "Computer_Science_Choices": [
-    1,
-    2
-  ],
-
-
-
-  "END": true
+  "loop_size": "2",
+  "0": {
+    "German_Choices": [
+      1,
+      2
+    ],
+    "English_Choices": [
+      1,
+      2
+    ],
+    "Spanish_Choices": [
+      2,
+      2
+    ],
+    "French_Choices": [
+      1,
+      2
+    ],
+    "Art_Choices": [
+      1,
+      2
+    ],
+    "Music_Choices": [
+      1,
+      2
+    ],
+    "DSP_Choices": [
+      1,
+      2
+    ],
+    "PoWi_Choices": [
+      1,
+      2
+    ],
+    "History_Choices": [
+      1,
+      2
+    ],
+    "Ethics_Choices": [
+      1,
+      2
+    ],
+    "Religion_ev_Choices": [
+      1,
+      2
+    ],
+    "Religion_kath_Choices": [
+      1,
+      2
+    ],
+    "Math_Choices": [
+      1,
+      2
+    ],
+    "Physics_Choices": [
+      1,
+      2
+    ],
+    "Chemistry_Choices": [
+      1,
+      2
+    ],
+    "Biology_Choices": [
+      1,
+      2
+    ],
+    "Computer_Science_Choices": [
+      1,
+      2
+    ]
+  },
+  "1": {
+    "German_Choices": [
+      1,
+      2
+    ],
+    "English_Choices": [
+      1,
+      2
+    ],
+    "Spanish_Choices": [
+      2,
+      2
+    ],
+    "French_Choices": [
+      1,
+      2
+    ],
+    "Art_Choices": [
+      1,
+      2
+    ],
+    "Music_Choices": [
+      1,
+      2
+    ],
+    "DSP_Choices": [
+      1,
+      2
+    ],
+    "PoWi_Choices": [
+      1,
+      2
+    ],
+    "History_Choices": [
+      1,
+      2
+    ],
+    "Ethics_Choices": [
+      1,
+      2
+    ],
+    "Religion_ev_Choices": [
+      1,
+      2
+    ],
+    "Religion_kath_Choices": [
+      1,
+      2
+    ],
+    "Math_Choices": [
+      1,
+      2
+    ],
+    "Physics_Choices": [
+      1,
+      2
+    ],
+    "Chemistry_Choices": [
+      1,
+      2
+    ],
+    "Biology_Choices": [
+      1,
+      2
+    ],
+    "Computer_Science_Choices": [
+      1,
+      3
+    ]
+  }
 }

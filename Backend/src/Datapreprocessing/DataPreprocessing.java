@@ -7,6 +7,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,24 +19,23 @@ public class DataPreprocessing {
 
     public void readObjects() {
         try {
-            boolean atEnd = false;
             JSONObject jsonObject = (JSONObject) jsonParser.parse((new FileReader("Backend/src/JSON/sample.json")));
             int loopCount = 0;
+            int maxLoop = Integer.parseInt((String) jsonObject.get("loop_size"));
             JSONArray jsonArray;
-            while (!atEnd) {
+            while (loopCount < maxLoop){
+                JSONObject student = (JSONObject) jsonObject.get(String.valueOf(loopCount));
                 studentList.add(new Student());
                 int courseCount = 0;
                 for (String courseName : courseNames) {
-                    jsonArray = (JSONArray) jsonObject.get(courseName);
+                    jsonArray = (JSONArray) student.get(courseName);
                     for (Object obj : jsonArray) {
                         studentList.get(loopCount).addChoice(courseCount, (Long) obj);
                     }
                     courseCount++;
                 }
-                if ((boolean) jsonObject.get("END")) {
-                    atEnd = true;
-                }
                 loopCount++;
+                System.out.println(loopCount);
             }
         } catch (ParseException | IOException e) {
             e.printStackTrace();
