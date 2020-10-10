@@ -1,0 +1,26 @@
+IndexIgnore * # prevent directory listing
+
+Order deny,allow
+Allow from *
+
+# ------------------------------------------
+# Rewrite so that php extentions are not shown
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+php_flag  display_errors                  on
+php_flag  display_startup_errors          on
+
+<Files config.php>
+    Order Allow,Deny
+    Deny from all
+    Allow from 127.0.0.1
+</Files>
+<Files path.php>
+    Order Allow,Deny
+    Deny from all
+    Allow from 127.0.0.1
+</Files>

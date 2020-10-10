@@ -43,9 +43,12 @@ class _HomeState extends State<Home> {
         leading: null,
         actions: [
           Visibility(
-              visible: this._isLoggedIn,
-              child: IconButton(
-                  icon: Icon(Icons.account_circle), onPressed: () {})),
+            visible: this._isLoggedIn,
+            child: IconButton(
+              icon: Icon(Icons.account_circle), 
+              onPressed: () => Navigator.pushNamed(context, "/account")
+            )
+          ),
           Visibility(
               visible: !this._isLoggedIn,
               child: FlatButton(

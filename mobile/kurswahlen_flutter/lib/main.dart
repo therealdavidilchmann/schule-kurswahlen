@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurswahlenflutter/Auth/account.dart';
 import 'package:kurswahlenflutter/Auth/login.dart';
 import 'package:kurswahlenflutter/Home/stundenplan.dart';
 import 'package:kurswahlenflutter/Lehrerliste/lehrerliste.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => viewContainerWrapper(Home()),
         '/login': (context) => viewContainerWrapper(Login()),
         '/stundenplan': (context) => viewContainerWrapper(Stundenplan()),
-        '/lehrerliste': (context) => viewContainerWrapper(Lehrerliste())
+        '/lehrerliste': (context) => viewContainerWrapper(Lehrerliste()),
+        '/account': (context) => viewContainerWrapper(Account())
       },
     );
   }
