@@ -1,12 +1,12 @@
 <?php
     require 'db.php';
     require 'path.php';
+    
     require 'stundenplan.php';
 
     // Connect to database
     $db = new DB();
     $db->connect("localhost", "id11715633_schulekurswahlen", "id11715633_schulekurswahluser", "123456789Ab!");
-
 
     // Path setup
     $path = new Path();

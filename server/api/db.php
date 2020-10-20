@@ -5,6 +5,9 @@
 
         function connect($servername, $dbname, $user="root", $password="") {
             $this->connection = mysqli_connect($servername, $user, $password, $dbname);
+            if (!$this->connection) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
         }
 
         public function getConnection() {
@@ -12,7 +15,7 @@
         }
 
         public function getAllClasses($uid) {
-            $sql = "SELECT * FROM classes WHERE student_id=?";
+            $sql = "SELECT * FROM student_class WHERE student_id=?";
             $stmt = mysqli_stmt_init($this->connection);
 
             if (mysqli_stmt_prepare($stmt, $sql)) {
@@ -45,6 +48,22 @@
 
         public function getAllTeachers($uid) {
             $sql = "SELECT * FROM teachers_students WHERE student_id=?";
+            $stmt = mysqli_stmt_init($this->connection);
+
+            if (mysqli_stmt_prepare($stmt, $sql)) {
+                mysqli_stmt_bind_param($stmt, "s", $uid);
+                mysqli_stmt_execute($stmt);
+                $res = mysqli_stmt_get_result($stmt);
+                $return_arr = array();
+                while ($row = mysqli_fetch_assoc($res)) {
+                    array_push($return_arr, $row);
+                }
+                return $return_arr;
+            }
+        }
+
+        function getStundenplaeneIds($uid) {
+            $sql = "SELECT * FROM stundenplan_students WHERE student_id=?";
             $stmt = mysqli_stmt_init($this->connection);
 
             if (mysqli_stmt_prepare($stmt, $sql)) {
