@@ -1,31 +1,29 @@
 <?php
-    require 'db.php';
     require 'path.php';
-    require 'stundenplan.php';
+    require 'ErrorHandler.php';
+    require 'queries.php';
+    
+    // Require all controllers
+    require './controllers/timetable.controller.php';
 
-    // Connect to database
-    $db = new DB();
-    $db->connect("localhost", "id11715633_schulekurswahlen", "id11715633_schulekurswahluser", "123456789Ab!");
-
+    // Create a Query controller to handle Queries controlled
+    $qc = new QueryController();
+    $db_connected_status = $qc->create_connection("id11715633_schulekurswahlen", "localhost", "id11715633_schulekurswahluser", "123456789Ab!");
+    if ($db_connected_status instanceof ErrorHandler) {
+        echo $db_connected_status->get_error_message();
+    }
 
     // Path setup
     $path = new Path();
-    $result = getResultFromDB($db, $path->getPath(), $path->getFunction(), $path->getParams());
+    $result = $path->runCodeFromPath($qc, $path);
 
-    echo json_encode(
-        $result != null
-        ? $result
-        : array("error" => TRUE)
-    );
-
-
-    function getResultFromDB($db, $filePath, $functionPath, $params) {
-        try {
-            $classStr = ucfirst($filePath);
-            $class = new $classStr($db);
-            return $class->$functionPath($params);
-        } catch (\Throwable $th) {
-            return null;
-        }
+    // Echo the results of the DB call
+    if ($result instanceof ErrorHandler) {
+        echo json_encode(
+            array("error"=>$result->get_error_message())
+        );
+    } else if ($result != null) {
+        echo json_encode($result);
     }
+
 ?>

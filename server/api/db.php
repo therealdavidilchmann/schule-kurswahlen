@@ -1,142 +1,67 @@
 <?php
 
+
     class DB {
         private $connection;
 
-        function connect($servername, $dbname, $user="root", $password="") {
+        public function connect($servername, $dbname, $user="root", $password="") {
             $this->connection = mysqli_connect($servername, $user, $password, $dbname);
+            if (!$this->connection) {
+                return new ErrorHandler(ErrorHandlerTypes::DB_CONNECTION_ERROR);
+            }
+            return true;
         }
 
         public function getConnection() {
-            return $this->connection;
+            return ($this->connection != null ? $this->connection : new ErrorHandler(ErrorHandlerTypes::DB_NO_EXISTING_CONNECTION));
         }
 
-        public function getAllClasses($uid) {
-            $sql = "SELECT * FROM classes WHERE student_id=?";
+        public function query($sql, $params) {
             $stmt = mysqli_stmt_init($this->connection);
-
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_bind_param($stmt, "s", $uid);
-                mysqli_stmt_execute($stmt);
-                $res = mysqli_stmt_get_result($stmt);
-                $return_arr = array();
-                while ($row = mysqli_fetch_assoc($res)) {
-                    array_push($return_arr, $row);
-                }
-                return $return_arr;
-            }
-        }
-
-        public function getWeekClasses($uid, $week) {
-            $sql = "SELECT * FROM classes WHERE student_id=? AND week=?";
-            $stmt = mysqli_stmt_init($this->connection);
-
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_bind_param($stmt, "ss", $uid, $week);
-                mysqli_stmt_execute($stmt);
-                $res = mysqli_stmt_get_result($stmt);
-                $return_arr = array();
-                while ($row = mysqli_fetch_assoc($res)) {
-                    array_push($return_arr, $row);
-                }
-                return $return_arr;
-            }
-        }
-
-        public function getAllTeachers($uid) {
-            $sql = "SELECT * FROM teachers_students WHERE student_id=?";
-            $stmt = mysqli_stmt_init($this->connection);
-
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_bind_param($stmt, "s", $uid);
-                mysqli_stmt_execute($stmt);
-                $res = mysqli_stmt_get_result($stmt);
-                $return_arr = array();
-                while ($row = mysqli_fetch_assoc($res)) {
-                    array_push($return_arr, $row);
-                }
-                return $return_arr;
-            }
-        }
-
-        function query_check_if_user_is_logged_in($token) {
-            $sql = "SELECT * FROM tokens WHERE token=?";
-            $stmt = mysqli_stmt_init($this->connection);
-
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_bind_param($stmt, "s", $token);
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_store_result($stmt);
-                $num_rows = mysqli_stmt_num_rows($stmt);
-                if ($num_rows > 0) { return TRUE; } else { return FALSE; }
-            }
-        }
-
-        function query_no_user_input($sql) {
-            $stmt = mysqli_stmt_init($this->connection);
-
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_execute($stmt);
-                $res = mysqli_stmt_get_result($stmt);
-                $return_arr = array();
-                while ($row = mysqli_fetch_assoc($res)) {
-                    array_push($return_arr, $row);
-                }
-                return $return_arr;
-            }
-        }
-        /*
-
-        function query_no_res($sql, $params) {
-            $stmt = mysqli_stmt_init($this->connection);
-            $bind_param_array = $this->get_bind_param_array($stmt, $params);
             
+            $amountOfParamsAsS = "";
+            for ($i=0; $i < count($params); $i++) { $amountOfParamsAsS.="s"; }
+
             if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_bind_param($bind_param_array);
+                if (count($params) != 0) { mysqli_stmt_bind_param($stmt, $amountOfParamsAsS, $params); }
                 mysqli_stmt_execute($stmt);
+                return mysqli_stmt_get_result($stmt);
+            } else {
+                return new ErrorHandler(ErrorHandlerTypes::DB_QUERY_STATEMENT_ERROR);
             }
         }
 
-        function query_bool($sql, $params) {
-            $stmt = mysqli_stmt_init($this->connection);
-
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_store_result($stmt);
-                $num_rows = mysqli_stmt_num_rows($stmt);
-                if ($num_rows > 0) { return TRUE; } else { return FALSE; }
+        public function query_bool($sql, ...$params) {
+            $res = $this->query($sql, $params);
+            if (!$res instanceof ErrorHandler) {
+                return mysqli_fetch_assoc($res) != null;
             }
+            return $res;
         }
 
-        function query_result($sql, $params) {
-            $stmt = mysqli_stmt_init($this->connection);
-            $bind_param_array = $this->get_bind_param_array($stmt, $params);
+        public function query_num_rows($sql, ...$params) {
+            $res = $this->query($sql, $params);
+            $c = 0;
+            if (!$res instanceof ErrorHandler) {
+                while (mysqli_fetch_assoc($res)) {
+                    $c++;
+                }
+                return $c;
+            }
+            return $res;
+        }
 
-            if (mysqli_stmt_prepare($stmt, $sql)) {
-                mysqli_stmt_bind_param($bind_param_array);
-                mysqli_stmt_execute($stmt);
-                $res = mysqli_stmt_get_result($stmt);
+        public function query_get_result($sql, ...$params) {
+            $res = $this->query($sql, $params);
+            if (!$res instanceof ErrorHandler) {
                 $return_arr = array();
                 while ($row = mysqli_fetch_assoc($res)) {
                     array_push($return_arr, $row);
                 }
                 return $return_arr;
             }
+            return $res;
         }
-
-        function get_bind_param_array($stmt, $params) {
-            $bind_param_array = [$stmt];
-            $placeholder_string = "";
-
-            for ($i=0; $i < count($params); $i++) { 
-                $placeholder_string.="s";
-            }
-            array_push($bind_param_array, $placeholder_string);
-
-            foreach ($params as $param) {
-                array_push($bind_param_array, $param);
-            }
-
-            return $bind_param_array;
-        }*/
     }
+
+?>
